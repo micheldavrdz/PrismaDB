@@ -3,43 +3,43 @@ const prisma = new PrismaClient();
 
 (async function main() {
   try {
-    const woopa = await prisma.explorer_2.upsert({
-      where: { name: 'Woopa' },
+    const commander = await prisma.MissionCommander.upsert({
+      where: { id: 1 },
       update: {},
       create: {
-        name: 'Woopa',
-		lang: 'Python',
-        missionCommander: 'Carlo',
-        enrollments: 5,
-		hasCertifications: true
+        name: 'Carlo',
+		username: 'carlogilmar',
+        mainStack: 'Erlang',
+        currentEnrollment: true,
+		hasAzureCertification: true
       },
     });
 
-    const woopa1 = await prisma.explorer_2.upsert({
-      where: { name: 'Woopa1' },
+    const commander1 = await prisma.MissionCommander.upsert({
+      where: { id: 2 },
       update: {},
       create: {
-        name: 'Woopa1',
-		lang: 'Javascript',
-        missionCommander: 'Carlo',
-        enrollments: 1,
-		hasCertifications: true
+        name: 'Rodrigo',
+		username: 'romarpla',
+        mainStack: 'Javascript',
+        currentEnrollment: true,
+		hasAzureCertification: true
       },
     });
 
-    const woopa2 = await prisma.explorer_2.upsert({
-      where: { name: 'Woopa 2' },
+    const commander2 = await prisma.MissionCommander.upsert({
+      where: { id: 3 },
       update: {},
       create: {
-        name: 'Woopa2',
-		lang: 'Javascript',
-        missionCommander: 'Carlo',
-        enrollments: 3,
-		hasCertifications: false
+        name: 'Fernanda',
+		username: 'FernandaOchoa',
+        mainStack: 'Python',
+        currentEnrollment: true,
+		hasAzureCertification: true
       },
     });
 
-    console.log('Create 3 explorers');
+    console.log('Create 3 mission commanders');
   } catch(e) {
     console.error(e);
     process.exit(1);
