@@ -142,7 +142,7 @@ app.put('/commanders/:id', async (req, res) => {
 			id: id
 		},
 		data: {
-			hasAzureCertification: req.body.hasAzureCertification
+			mainStack: req.body.mainStack
 		}
 	})
 
